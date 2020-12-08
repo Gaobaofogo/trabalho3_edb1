@@ -1,4 +1,5 @@
 #include <map>
+#include <set>
 #include <iostream>
 
 #include "MispelledWord.hpp"
@@ -18,7 +19,7 @@ int main(int argc, char* argv[]) {
   DictData dict_data = read_dictionary_file(argv[1]);
   std::vector<std::string> test_data = read_test_file(argv[2]);
   std::vector<MispelledWord> misspelled_words;
-  std::map<std::string, MispelledWord> history_checked_words;
+  std::set<std::string> history_checked_words;
 
   for (size_t i = 0; i < test_data.size(); ++i) {
     if (dict_data.second.count(test_data[i]) == 0
@@ -28,7 +29,7 @@ int main(int argc, char* argv[]) {
 
 
       misspelled_words.push_back(misspelled_word);
-      history_checked_words[misspelled_word.word] = misspelled_word;
+      history_checked_words.insert(misspelled_word.word);
     }
   }
 

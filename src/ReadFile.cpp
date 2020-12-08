@@ -25,7 +25,7 @@ DictData read_dictionary_file(std::string filename) {
     stream_line >> word;
 
     dict_data.first.push_back(word);
-    dict_data.second[word] = word;
+    dict_data.second.insert(word);
   }
 
   return dict_data;
