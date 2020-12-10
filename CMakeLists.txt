@@ -16,5 +16,5 @@ ADD_EXECUTABLE(
   src/main.cpp
   src/MispelledWord.cpp
   src/ReadFile.cpp
-  src/WriteFile.cpp
+  src/PrintCorrections.cpp
 )

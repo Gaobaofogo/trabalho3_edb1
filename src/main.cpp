@@ -4,7 +4,7 @@
 
 #include "MispelledWord.hpp"
 #include "ReadFile.hpp"
-#include "WriteFile.hpp"
+#include "PrintCorrections.hpp"
 #include "types/DictData.hpp"
 
 
@@ -49,7 +49,7 @@ int main(int argc, char* argv[]) {
     }
   }
 
-  write_corrections_on_file("teste.txt", misspelled_words);
+  print_corrections(misspelled_words);
 
   return 0;
 }
